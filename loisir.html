@@ -9,6 +9,27 @@
 </head>
 
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-x-danse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2"/><path d="M12 7.2V13"/><path d="M6.5 4.8 12 9l5.5-4.2"/><path d="m12 13-4 7"/><path d="m12 13 4.2 2.8 1.6 4.2"/></g></symbol>
+<symbol id="i-lu-drama" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11h.01" />
+  <path d="M14 6h.01" />
+  <path d="M18 6h.01" />
+  <path d="M6.5 13.1h.01" />
+  <path d="M22 5c0 9-4 12-6 12s-6-3-6-12c0-2 2-3 6-3s6 1 6 3" />
+  <path d="M17.4 9.9c-.8.8-2 .8-2.8 0" />
+  <path d="M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7" />
+  <path d="M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4" /></g></symbol>
+<symbol id="i-lu-volleyball" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 7a16 16 20 0 1 10.98 4.362" />
+  <path d="M12 12a13 13 0 0 1-8.66 5" />
+  <path d="M16.83 13.634a16 16 0 0 1-9.267 7.328" />
+  <path d="M20.66 17A13 13 0 0 0 12 12a13 13 0 0 1 0-10" />
+  <path d="M8.17 15.366a16 16 0 0 1-1.713-11.69" />
+  <circle cx="12" cy="12" r="10" /></g></symbol>
+<symbol id="i-x-pingpong" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 3.2a6.8 6.8 0 0 1 4.6 11.6l-3.6 3.6a6.8 6.8 0 0 1-9.6-9.6z" transform="translate(0 0)"/><path d="m14.6 18.4 3.2 3.2" stroke-width="2.8"/><circle cx="19" cy="5" r="1.7" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="i-lu-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+  <rect x="2" y="4" width="20" height="16" rx="2" /></g></symbol>
+<symbol id="i-lu-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></g></symbol>
+</svg>
 
 <!-- ===================== HEADER ===================== -->
 <header class="header">
@@ -25,14 +46,13 @@
         <a href="expe1.html">Expérience professionnelle</a>
         <a href="projet.html">Projets</a>
         <a href="loisir.html" class="actif">Loisirs &amp; Réalisations</a>
-        <a href="referents.html">Référent</a>
+        <a href="referents.html">Référents</a>
         <a href="contact.html">Contact</a>
       </nav>
   
       <div class="actions">
         <form class="search" action="#" method="get">
           <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher">
-          <button type="submit" aria-label="Rechercher">🔍</button>
         </form>
         <div class="langue">FR</div>
       </div>
@@ -52,12 +72,11 @@
       <a href="expe1.html">Expérience professionnelle</a>
       <a href="projet.html">Projets</a>
       <a href="loisir.html" class="actif">Loisirs &amp; Réalisations</a>
-      <a href="referents.html">Référent</a>
+      <a href="referents.html">Référents</a>
       <a href="contact.html">Contact</a>
       <div class="mobile-actions">
         <form class="search" action="#" method="get">
           <input type="search" name="q" placeholder="Rechercher...">
-          <button type="submit">🔍</button>
         </form>
         <div class="langue">FR</div>
       </div>
@@ -75,20 +94,20 @@
   <!-- ===================== LOISIRS ===================== -->
   <main class="section loisirs-page">
   
-    <h2 class="section-title">✨ Loisirs & Réalisations</h2>
-    <p class="section-subtitle">
-      Une autre facette de moi : créativité, discipline et esprit collectif
-    </p>
+    <div class="fc-header reveal">
+    <h1 class="fc-titre">Loisirs &amp; <span>Réalisations</span></h1>
+    <p class="fc-sous">Une autre facette de moi : créativité, discipline et esprit collectif</p>
+    </div>
   
     <div class="loisirs-grid">
   
       <!-- DANSE -->
       <div class="loisir-card reveal">
-        <div class="loisir-icone">💃</div>
+        <div class="loisir-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-x-danse"/></svg></div>
         <h3>Danse</h3>
         <p>
           Je pratique la danse afro, hip-hop et contemporaine.  
-          J’ai participé à un **talent show télévisé**, où j’ai performé en groupe,
+          J’ai participé à un <strong>talent show télévisé</strong>, où j’ai performé en groupe,
           mêlant créativité et performance scénique.  
   
           Cette expérience m’a appris à me dépasser, gérer le stress et travailler
@@ -98,11 +117,11 @@
   
       <!-- THEATRE -->
       <div class="loisir-card reveal">
-        <div class="loisir-icone">🎭</div>
+        <div class="loisir-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-drama"/></svg></div>
         <h3>Théâtre</h3>
         <p>
           Le théâtre me permet d’explorer l’expression artistique et la narration.  
-          J’ai participé à une adaptation créative de l’univers de *Notre-Dame de Paris*,
+          J’ai participé à une adaptation créative de l’univers de <em>Notre-Dame de Paris</em>,
           en donnant vie à un personnage dans une mise en scène poétique.
   
           Cette pratique développe ma capacité à communiquer, à m’exprimer et à créer
@@ -112,10 +131,10 @@
   
       <!-- VOLLEY -->
       <div class="loisir-card reveal">
-        <div class="loisir-icone">🏐</div>
+        <div class="loisir-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-volleyball"/></svg></div>
         <h3>Volley-ball</h3>
         <p>
-          Je joue au volley-ball au poste de **libero**, un rôle clé basé sur
+          Je joue au volley-ball au poste de <strong>libero</strong>, un rôle clé basé sur
           la réactivité, la précision et la lecture du jeu.  
   
           Ce sport renforce mon esprit d’équipe, ma communication rapide
@@ -125,7 +144,7 @@
   
       <!-- TENNIS TABLE -->
       <div class="loisir-card reveal">
-        <div class="loisir-icone">🏓</div>
+        <div class="loisir-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-x-pingpong"/></svg></div>
         <h3>Tennis de table</h3>
         <p>
           Je pratique le tennis de table depuis 2020.  
@@ -151,7 +170,7 @@
         <p class="footer-name">Princia RASOLOFOMANANA</p>
         <p class="footer-desc">
           Étudiante en BUT Science des Données<br>
-          Apprentie Responsable Méthodes et Outils<br>
+          Apprentie Assistante Responsable Méthodes et Outils<br>
           Contrôle Interne
         </p>
       </div>
@@ -172,9 +191,10 @@
       <div class="footer-col footer-reseaux">
         <h4>Réseaux</h4>
         <div class="footer-socials">
-          <a class="social" href="https://www.linkedin.com/in/princia-r-ba4b43343" aria-label="LinkedIn">in</a>
-          <a class="social" href="mailto:princiarslfm@gmail.com" aria-label="Email">✉</a>
-          <a class="social" href="tel:+33765880897" aria-label="Téléphone">📞</a>
+          <a class="social" href="https://www.linkedin.com/in/princia-rasolofomanana" aria-label="LinkedIn">in</a>
+          <a class="social" href="https://github.com/Princia-RASOLOFOMANANA" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="social" href="mailto:princiarslfm@gmail.com" aria-label="Email"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-mail"/></svg></a>
+          <a class="social" href="tel:+33765880897" aria-label="Téléphone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-phone"/></svg></a>
         </div>
       </div>
   

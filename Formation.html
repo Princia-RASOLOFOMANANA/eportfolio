@@ -9,6 +9,15 @@
 </head>
 
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-lu-plane" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" /></g></symbol>
+<symbol id="i-lu-map-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></g></symbol>
+<symbol id="i-lu-chevron-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></g></symbol>
+<symbol id="i-lu-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+  <rect x="2" y="4" width="20" height="16" rx="2" /></g></symbol>
+<symbol id="i-lu-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></g></symbol>
+</svg>
 
 <!-- ===================== HEADER ===================== -->
 <header class="header">
@@ -25,14 +34,13 @@
       <a href="expe1.html">Expérience professionnelle</a>
       <a href="projet.html">Projets</a>
       <a href="loisir.html">Loisirs &amp; Réalisations</a>
-      <a href="referents.html">Référent</a>
+      <a href="referents.html">Référents</a>
       <a href="contact.html">Contact</a>
     </nav>
 
     <div class="actions">
       <form class="search" action="#" method="get">
         <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher">
-        <button type="submit" aria-label="Rechercher">🔍</button>
       </form>
       <div class="langue">FR</div>
     </div>
@@ -52,12 +60,11 @@
     <a href="expe1.html">Expérience professionnelle</a>
     <a href="projet.html">Projets</a>
     <a href="loisir.html">Loisirs &amp; Réalisations</a>
-    <a href="referents.html">Référent</a>
+    <a href="referents.html">Référents</a>
     <a href="contact.html">Contact</a>
     <div class="mobile-actions">
       <form class="search" action="#" method="get">
         <input type="search" name="q" placeholder="Rechercher...">
-        <button type="submit">🔍</button>
       </form>
       <div class="langue">FR</div>
     </div>
@@ -81,13 +88,13 @@
   <!-- ===== FRISE FORMATION ===== -->
   <section class="frise-section">
 
-    <h2 class="frise-label reveal">🎓 Parcours académique</h2>
+    <h2 class="frise-label reveal">Parcours académique</h2>
 
     <div class="frise">
 
       <!-- Ligne centrale -->
       <div class="frise-ligne"></div>
-      <div class="frise-avion">✈</div>
+      <div class="frise-avion"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-plane"/></svg></div>
       <!-- ======= FRISE : Item 1 — BUT IUT Paris ======= -->
 <div class="frise-item gauche reveal">
     <div class="frise-card">
@@ -106,14 +113,14 @@
         </div>
       </div>
   
-      <p class="frise-lieu">📍 IUT de Paris - Rives de Seine</p>
+      <p class="frise-lieu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-map-pin"/></svg> IUT de Paris - Rives de Seine</p>
       <p class="frise-parcours">Parcours : Visualisation &amp; Conception d'Outils Décisionnels</p>
   
       
       
       <button class="btn-savoir-plus" onclick="toggleNiveaux(this)" aria-expanded="false">
         <span class="btn-texte">En savoir plus</span>
-        <span class="btn-icone">↓</span>
+        <span class="btn-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chevron-down"/></svg></span>
       </button>
       
       <div class="frise-details collapsed">
@@ -167,7 +174,7 @@
         </div>
       </div>
   
-      <p class="frise-lieu">📍 CY Cergy Paris Université</p>
+      <p class="frise-lieu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-map-pin"/></svg> CY Cergy Paris Université</p>
     </div>
   </div>
   
@@ -185,7 +192,7 @@
         </div>
       </div>
   
-      <p class="frise-lieu">📍 Le Petit Nid | Madagascar</p>
+      <p class="frise-lieu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-map-pin"/></svg> Le Petit Nid | Madagascar</p>
     </div>
     <div class="frise-point"></div>
   </div>
@@ -196,7 +203,7 @@
   <!-- ===== CERTIFICATIONS ===== -->
   <section class="certif-section">
 
-    <h2 class="frise-label reveal">🏅 Certifications</h2>
+    <h2 class="frise-label reveal">Certifications</h2>
 
     <div class="certif-grid">
 
@@ -290,7 +297,7 @@
       <p class="footer-name">Princia RASOLOFOMANANA</p>
       <p class="footer-desc">
         Étudiante en BUT Science des Données<br>
-        Apprentie Responsable Méthodes et Outils<br>
+        Apprentie Assistante Responsable Méthodes et Outils<br>
         Contrôle Interne
       </p>
     </div>
@@ -311,9 +318,10 @@
     <div class="footer-col footer-reseaux">
       <h4>Réseaux</h4>
       <div class="footer-socials">
-        <a class="social" href="https://www.linkedin.com/in/princia-r-ba4b43343" aria-label="LinkedIn">in</a>
-        <a class="social" href="mailto:princiarslfm@gmail.com" aria-label="Email">✉</a>
-        <a class="social" href="tel:+33765880897" aria-label="Téléphone">📞</a>
+        <a class="social" href="https://www.linkedin.com/in/princia-rasolofomanana" aria-label="LinkedIn">in</a>
+        <a class="social" href="https://github.com/Princia-RASOLOFOMANANA" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a class="social" href="mailto:princiarslfm@gmail.com" aria-label="Email"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-mail"/></svg></a>
+        <a class="social" href="tel:+33765880897" aria-label="Téléphone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-phone"/></svg></a>
       </div>
     </div>
 

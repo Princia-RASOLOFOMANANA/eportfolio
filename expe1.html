@@ -9,6 +9,14 @@
 </head>
 
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-lu-map-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></g></symbol>
+<symbol id="i-lu-chevron-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></g></symbol>
+<symbol id="i-lu-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+  <rect x="2" y="4" width="20" height="16" rx="2" /></g></symbol>
+<symbol id="i-lu-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></g></symbol>
+</svg>
 
 <!-- ===================== HEADER ===================== -->
 <header class="header">
@@ -25,14 +33,13 @@
       <a href="expe1.html" class="actif">Expérience professionnelle</a>
       <a href="projet.html">Projets</a>
       <a href="loisir.html">Loisirs &amp; Réalisations</a>
-      <a href="referents.html">Référent</a>
+      <a href="referents.html">Référents</a>
       <a href="contact.html">Contact</a>
     </nav>
 
     <div class="actions">
       <form class="search" action="#" method="get">
         <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher">
-        <button type="submit" aria-label="Rechercher">🔍</button>
       </form>
       <div class="langue">FR</div>
     </div>
@@ -52,12 +59,11 @@
     <a href="expe1.html" class="actif">Expérience professionnelle</a>
     <a href="projet.html">Projets</a>
     <a href="loisir.html">Loisirs &amp; Réalisations</a>
-    <a href="referents.html">Référent</a>
+    <a href="referents.html">Référents</a>
     <a href="contact.html">Contact</a>
     <div class="mobile-actions">
       <form class="search" action="#" method="get">
         <input type="search" name="q" placeholder="Rechercher...">
-        <button type="submit">🔍</button>
       </form>
       <div class="langue">FR</div>
     </div>
@@ -81,7 +87,7 @@
   
     <!-- ===== FRISE EXPERIENCE ===== -->
     <section class="frise-section">
-      <h2 class="frise-label reveal">💼 Parcours en entreprise</h2>
+      <h2 class="frise-label reveal">Parcours professionnel</h2>
   
       <div class="frise">
   
@@ -97,32 +103,34 @@
             <div class="frise-date-badge">2025 – 2027</div>
   
             <div class="card-ecole-header">
-              <img src="images/RG.png" class="logo-ecole">
+              <img src="images/RG.png" alt="Logo Renault Group" class="logo-ecole">
               <div>
                 <h3>Renault Group</h3>
-                <h4>Apprentie – Outils & Data en Contrôle Interne</h4>
+                <h4>Assistante Méthodes &amp; Data Contrôle Interne</h4>
               </div>
             </div>
   
-            <p class="frise-lieu">📍 France</p>
+            <p class="frise-lieu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-map-pin"/></svg> France</p>
   
             <p class="frise-parcours">
-              Département Méthodes & Outils du Contrôle Interne
+              Contrat d'apprentissage - Département Méthodes &amp; Outils du Contrôle Interne
             </p>
   
             <div class="frise-competences">
               <span class="fc-tag">Power BI</span>
+              <span class="fc-tag">Power Automate</span>
               <span class="fc-tag">SAP</span>
               <span class="fc-tag">Excel / VBA</span>
               <span class="fc-tag">Python</span>
               <span class="fc-tag">Power Query</span>
               <span class="fc-tag">GRC (Optro)</span>
+              <span class="fc-tag">Workday</span>
             </div>
   
             <!-- BOUTON -->
             <button class="btn-savoir-plus" onclick="toggleExp(this)" aria-expanded="false">
               <span class="btn-texte">Voir missions</span>
-              <span class="btn-icone">↓</span>
+              <span class="btn-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chevron-down"/></svg></span>
             </button>
   
             <!-- DETAILS -->
@@ -135,6 +143,9 @@
                 <li>Automatisation des analyses avec Python et VBA</li>
                 <li>Utilisation de l’outil GRC Optro pour le suivi des risques et contrôles</li>
                 <li>Participation à la préparation des campagnes de self-assessment</li>
+                <li>Fiabilisation des données de la Délégation d’Autorité (DoA) avec les données RH Workday, automatisée en Python (pandas)</li>
+                <li>Identification des profils SAP à risque (conflits SoD, accès inactifs) avec un dashboard Power BI</li>
+                <li>Automatisation de l’évaluation des plans d’actions avec Power Automate et un modèle d’IA (Claude Sonnet)</li>
               </ul>
   
             </div>
@@ -159,7 +170,7 @@
       <p class="footer-name">Princia RASOLOFOMANANA</p>
       <p class="footer-desc">
         Étudiante en BUT Science des Données<br>
-        Apprentie Responsable Méthodes et Outils<br>
+        Apprentie Assistante Responsable Méthodes et Outils<br>
         Contrôle Interne
       </p>
     </div>
@@ -180,9 +191,10 @@
     <div class="footer-col footer-reseaux">
       <h4>Réseaux</h4>
       <div class="footer-socials">
-        <a class="social" href="https://www.linkedin.com/in/princia-r-ba4b43343" aria-label="LinkedIn">in</a>
-        <a class="social" href="mailto:princiarslfm@gmail.com" aria-label="Email">✉</a>
-        <a class="social" href="tel:+33765880897" aria-label="Téléphone">📞</a>
+        <a class="social" href="https://www.linkedin.com/in/princia-rasolofomanana" aria-label="LinkedIn">in</a>
+        <a class="social" href="https://github.com/Princia-RASOLOFOMANANA" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a class="social" href="mailto:princia.rasolofomanana@outlook.com" aria-label="Email"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-mail"/></svg></a>
+        <a class="social" href="tel:+33765880897" aria-label="Téléphone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-phone"/></svg></a>
       </div>
     </div>
 
@@ -228,7 +240,7 @@
   
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   
-    /* ✅ AJOUTE JUSTE CETTE FONCTION */
+    /* Ouverture / fermeture d'une carte */
     function toggleExp(bouton) {
   const details = bouton.nextElementSibling;
   const icone = bouton.querySelector('.btn-icone');
@@ -243,14 +255,14 @@
     details.classList.remove("open");
 
     bouton.querySelector('.btn-texte').textContent = "Voir missions";
-    icone.style.transform = "rotate(0deg)"; // 👈 flèche bas
+    icone.style.transform = "rotate(0deg)"; // flèche bas
   } else {
     details.style.maxHeight = details.scrollHeight + "px";
     details.style.opacity = "1";
     details.classList.add("open");
 
     bouton.querySelector('.btn-texte').textContent = "Réduire";
-    icone.style.transform = "rotate(180deg)"; // 👈 flèche haut
+    icone.style.transform = "rotate(180deg)"; // flèche haut
   }
 }
   </script>

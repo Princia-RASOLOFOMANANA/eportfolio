@@ -3,8 +3,7 @@
    Thème : Vol & Aviation ✈
    ============================================ */
 
-   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
    /* ===================== VARIABLES ===================== */
    :root {
      --bleu:        #1B9AAA;
@@ -272,7 +271,7 @@
    
    /* Traînée d'avion */
    .hero-banner::after {
-     content: '✈';
+     content: '';
      position: absolute;
      font-size: 28px;
      color: rgba(255,255,255,0.15);
@@ -569,7 +568,7 @@
    }
    
    .section-title::after {
-     content: '✈';
+     content: '';
      position: absolute;
      right: 0;
      font-size: 20px;
@@ -948,7 +947,7 @@
 }
 
 .frise-date-badge::before {
-  content: '✈';
+  content: '';
   font-size: 11px;
 }
 
@@ -1761,3 +1760,475 @@
    @media (max-width: 768px) {
      .contact-grid { grid-template-columns: 1fr; }
    }
+
+
+
+   /* =====================================================
+   REFONTE DESIGN — « Carnet de vol / carte aéronautique »
+   ===================================================== */
+
+:root {
+  --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --trait: 1.5px solid var(--bleu-nuit);
+}
+
+::selection { background: var(--or); color: var(--bleu-nuit); }
+
+/* ---------- Fond : papier millimétré ---------- */
+body {
+  background-color: #f4f9fc;
+  background-image:
+    linear-gradient(rgba(27,154,170,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27,154,170,0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  background: var(--bleu-nuit);
+  border-bottom: 1px solid var(--or);
+}
+.menu { gap: 2px; }
+.menu a {
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  padding: 8px 10px;
+}
+.menu a:hover { background: transparent; color: var(--or); }
+.menu a.actif { background: transparent; color: var(--or); border-bottom: 2px solid var(--or); }
+.search { border-radius: 0; }
+.langue { border-radius: 0; font-family: var(--mono); }
+.menu-mobile a.actif { color: var(--or); }
+
+/* ---------- Bandeau citation (radar + grille) ---------- */
+.hero-banner {
+  background: linear-gradient(120deg, #0a1628 0%, #0e3552 55%, #0e6b77 100%);
+  padding: 64px 40px 56px;
+}
+.hero-banner::before {
+  background-image:
+    repeating-radial-gradient(circle at 88% 130%, transparent 0, transparent 46px, rgba(255,255,255,0.09) 46px, rgba(255,255,255,0.09) 47px),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px;
+  background-position: 0 0, 0 0, 0 0;
+  opacity: 1;
+}
+
+/* ---------- Colonne gauche : photo en hublot ---------- */
+.photo-wrapper { width: 150px; height: 196px; margin: 0 auto 24px; }
+.photo {
+  width: 150px;
+  height: 196px;
+  border-radius: 72px / 84px;
+  border: 5px solid var(--bleu-nuit);
+  box-shadow: 0 0 0 2px var(--or), 8px 8px 0 var(--bleu-clair);
+}
+.badge-data {
+  bottom: 12px;
+  right: -14px;
+  border-radius: 0;
+  background: var(--or);
+  color: var(--bleu-nuit);
+  font-family: var(--mono);
+  letter-spacing: 1px;
+  box-shadow: 3px 3px 0 var(--bleu-nuit);
+}
+.nom { color: var(--bleu-nuit); font-size: 21px; }
+.titre-sous-nom { font-family: var(--mono); font-size: 11px; letter-spacing: 0.4px; }
+
+.stat-item {
+  background: var(--bleu-nuit);
+  border: none;
+  border-radius: 0;
+  padding: 12px 6px;
+  box-shadow: 4px 4px 0 var(--bleu-clair);
+}
+.stat-item:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--bleu); }
+.stat-num { color: var(--or); }
+.stat-label { color: rgba(255,255,255,0.7); font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.3px; }
+
+/* ---------- Étiquettes (tags) ---------- */
+.tag, .fc-tag, .projet-tags span, .certif-badge {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.3px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--bleu-fonce);
+  border: 1px solid var(--bleu);
+  box-shadow: none;
+}
+.tag:hover { background: var(--bleu); color: #fff; border-color: var(--bleu); }
+.projet-categorie, .projet-competences span { border-radius: 0; font-family: var(--mono); }
+
+/* ---------- Boutons ---------- */
+.btn-cv, .btn-envoyer {
+  background: var(--bleu-nuit);
+  color: #fff;
+  border: var(--trait);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--bleu);
+}
+.btn-cv { animation-fill-mode: backwards; }
+.btn-cv:hover, .btn-envoyer:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--or);
+}
+.btn-savoir-plus, .btn-projet {
+  background: transparent;
+  border: 1.5px solid var(--bleu-nuit);
+  border-radius: 0;
+  color: var(--bleu-nuit);
+}
+.btn-savoir-plus:hover, .btn-projet:hover {
+  background: var(--bleu-nuit);
+  border-color: var(--bleu-nuit);
+  color: #fff;
+  transform: none;
+}
+.btn-savoir-plus:hover .btn-icone, .btn-projet:hover .btn-icone { color: var(--or); }
+
+/* ---------- Texte accueil ---------- */
+.texte h2 { font-size: 44px; letter-spacing: -0.5px; color: var(--bleu-nuit); }
+
+.message-box {
+  background: var(--blanc);
+  border: var(--trait);
+  border-radius: 2px;
+  box-shadow: 8px 8px 0 var(--bleu-clair);
+  padding: 26px 56px 26px 28px;
+}
+.message-box::before { display: none; }              /* barre verticale supprimée */
+.message-box::after { right: 36px; border-right: 2px dashed var(--bleu-nuit); opacity: 0.25; }
+.message-box p { padding-left: 0; }
+
+/* ---------- Titres de pages et de sections ---------- */
+.fc-header {
+  text-align: left;
+  padding: 44px 0 26px;
+  margin-bottom: 36px;
+  border-bottom: var(--trait);
+  position: relative;
+}
+.fc-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 72px;
+  height: 8px;
+  background: var(--or);
+}
+.fc-titre { font-size: 54px; line-height: 1.05; letter-spacing: -1px; color: var(--bleu-nuit); }
+.fc-titre span { color: var(--bleu); font-style: italic; }
+.fc-sous { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.5px; }
+.fc-sous::before { content: '→ '; color: var(--or); font-weight: 700; }
+
+.section-title {
+  font-size: 32px;
+  color: var(--bleu-nuit);
+  border-bottom: none;
+  padding-bottom: 0;
+  gap: 16px;
+}
+.section-title::before {
+  content: '';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--or);
+  color: var(--bleu-nuit);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.section-title::after {
+  position: static;
+  content: '';
+  flex: 1;
+  height: 0;
+  border-top: 1px dashed var(--bleu);
+  font-size: 0;
+}
+.section-subtitle { font-family: var(--mono); font-size: 12px; letter-spacing: 0.3px; margin-top: 8px; }
+
+/* ---------- Grandes cartes : ombre pleine décalée ---------- */
+.frise-card, .certif-card, .comp-bloc, .projet-card, .loisir-card, .referent-card {
+  background: var(--blanc);
+  border: var(--trait);
+  border-radius: 2px;
+  box-shadow: 6px 6px 0 var(--bleu-clair);
+}
+.frise-card:hover, .certif-card:hover, .projet-card:hover, .loisir-card:hover, .referent-card:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--bleu-nuit);
+  box-shadow: 9px 9px 0 var(--bleu);
+}
+.comp-bloc:hover { transform: none; box-shadow: 6px 6px 0 var(--bleu); }
+
+/* ---------- Petits éléments : onglet épais en bas ---------- */
+.comp-tag-item, .outil-card, .soft-card, .langue-card, .contact-item {
+  background: var(--blanc);
+  border: 1px solid var(--border);
+  border-bottom: 3px solid var(--bleu-clair);
+  border-radius: 0;
+  box-shadow: none;
+}
+.comp-tag-item:hover, .outil-card:hover, .soft-card:hover, .langue-card:hover, .contact-item:hover {
+  border-color: var(--bleu);
+  border-bottom-color: var(--or);
+  box-shadow: none;
+}
+.fichier-lien { border-radius: 0; }
+.domaine-pill { border-radius: 0; }
+.domaine-pill:hover { background: var(--bleu-nuit); border-color: var(--bleu-nuit); color: var(--or); transform: none; }
+.langue-cercle, .langue-drapeau { border-radius: 0; font-family: var(--mono); }
+.comp-bloc-icone { border-radius: 0; }
+.comp-bloc-header { border-bottom: 1.5px solid var(--bleu-nuit); }
+
+/* ---------- Page Formation ---------- */
+.frise-label {
+  border-left: none;                       /* barre verticale supprimée */
+  background: var(--bleu-nuit);
+  color: #fff;
+  border-radius: 0;
+  font-size: 20px;
+  padding: 12px 22px;
+  box-shadow: 6px 6px 0 var(--bleu-clair);
+  display: inline-flex;
+}
+.frise-ligne { border-left: 2px dashed var(--bleu); }
+.frise-point {
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  background: var(--or);
+  border: 2px solid var(--bleu-nuit);
+  box-shadow: none;
+  transform: translateX(-50%) rotate(45deg);
+}
+.frise-item:hover .frise-point {
+  transform: translateX(-50%) rotate(45deg) scale(1.35);
+  box-shadow: none;
+}
+.frise-item.gauche .frise-card::after,
+.frise-item.droite .frise-card::after { background: var(--bleu-nuit); }
+.frise-date-badge {
+  background: var(--bleu-nuit);
+  border-radius: 0;
+  font-family: var(--mono);
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+.frise-date-badge::before { color: var(--or); }
+.frise-card h3 { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 1px; }
+.logo-ecole, .certif-logo-img, .certif-logo { border-radius: 2px; }
+.logo-ecole-initial { border-radius: 0; background: var(--bleu-nuit); color: var(--or); border: none; }
+.certif-org { font-family: var(--mono); }
+
+/* ---------- Page Projets : onglets ---------- */
+.onglet-principal {
+  border: var(--trait);
+  border-radius: 0;
+  background: var(--blanc);
+  color: var(--bleu-nuit);
+  box-shadow: 4px 4px 0 var(--bleu-clair);
+}
+.onglet-principal:hover {
+  background: var(--blanc);
+  color: var(--bleu-fonce);
+  border-color: var(--bleu-nuit);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--bleu);
+}
+.onglet-principal.actif {
+  background: var(--bleu-nuit);
+  border-color: var(--bleu-nuit);
+  color: #fff;
+  transform: none;
+  box-shadow: 4px 4px 0 var(--or);
+}
+.onglet-principal .onglet-count { border-radius: 0; font-family: var(--mono); }
+
+.sous-onglet {
+  border: 1.5px solid var(--bleu-nuit);
+  border-radius: 0;
+  background: var(--blanc);
+  color: var(--bleu-nuit);
+  box-shadow: none;
+}
+.sous-onglet:hover { background: var(--bleu-bg); border-color: var(--bleu-nuit); color: var(--bleu-nuit); }
+.sous-onglet.actif {
+  background: var(--bleu-nuit);
+  color: var(--or);
+  border: 1.5px solid var(--bleu-nuit);     /* barre verticale supprimée */
+}
+
+/* ---------- Page Loisirs : numérotation ---------- */
+.loisirs-grid { counter-reset: loisir; }
+.loisir-card { counter-increment: loisir; }
+.loisir-card::before {
+  content: counter(loisir, decimal-leading-zero);
+  top: 14px;
+  right: 18px;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  opacity: 1;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--bleu);
+}
+.loisir-card:hover::before { transform: none; }
+.loisir-card h3 { color: var(--bleu-nuit); }
+.loisir-card h3::after { display: none; }
+
+/* ---------- Référents / Contact ---------- */
+.referent-avatar { border-radius: 0; background: var(--bleu-nuit); color: var(--or); border: none; }
+.referent-role { font-family: var(--mono); font-size: 12px; }
+.contact-form input, .contact-form textarea { border: var(--trait); border-radius: 0; }
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--bleu-nuit);
+  box-shadow: 4px 4px 0 var(--bleu-clair);
+}
+.contact-item .ci-icon { border-radius: 0; background: var(--bleu-nuit); color: var(--or); }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--bleu-nuit); border-top: 3px solid var(--or); }
+.social { border-radius: 0; }
+.footer-col h4 { font-family: var(--mono); }
+
+/* ---------- Avion décoratif (remplace le caractère avion des pseudo-éléments) ---------- */
+:root {
+  --ico-avion: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z' /%3E%3C/svg%3E");
+  --ico-avion-nuit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1628' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z' /%3E%3C/svg%3E");
+}
+.hero-banner::after {
+  content: '';
+  font-size: 0;
+  width: 28px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+  -webkit-mask: var(--ico-avion) center / contain no-repeat;
+  mask: var(--ico-avion) center / contain no-repeat;
+  transform: rotate(45deg);   /* nez vers la droite */
+}
+.section-title::before {
+  content: '';
+  font-size: 0;
+  background: var(--or) var(--ico-avion-nuit) center / 20px 20px no-repeat;
+}
+.frise-date-badge::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: -1px;
+  background: currentColor;
+  -webkit-mask: var(--ico-avion) center / contain no-repeat;
+  mask: var(--ico-avion) center / contain no-repeat;
+}
+
+/* ==========================================================
+   ICÔNES SVG — remplacent les emojis et les logos de marque
+   Couleur : teal du portfolio (--bleu), or au survol
+   ========================================================== */
+.ico {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: -0.15em;
+  color: var(--bleu);
+}
+.social .ico, .ci-icon .ico, .btn-cv .ico, .btn-envoyer .ico { color: inherit; }
+.social .ico { width: 16px; height: 16px; }
+.btn-cv .ico, .btn-envoyer .ico { width: 1.05em; height: 1.05em; }
+.btn-envoyer .ico { margin-left: 4px; }
+.ci-icon .ico { width: 18px; height: 18px; }
+.frise-lieu .ico { width: 14px; height: 14px; margin-right: 3px; vertical-align: -2px; }
+.frise-avion .ico { width: 1.1em; height: 1.1em; color: var(--bleu); }
+.frise-avion { transform: translateX(-50%) rotate(135deg); }   /* nez vers le bas */
+.btn-icone .ico { width: 1.15em; height: 1.15em; vertical-align: -0.2em; }
+.loisir-icone .ico { width: 40px; height: 40px; }
+.referent-contact .ico { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; }
+.projet-section-detail h4 .ico,
+.projet-files-titre .ico { width: 14px; height: 14px; margin-right: 5px; vertical-align: -2px; }
+.fichier-icone { display: inline-flex; align-items: center; }
+.fichier-icone .ico { width: 20px; height: 20px; }
+.fichier-action .ico { width: 13px; height: 13px; margin-right: 3px; vertical-align: -2px; }
+
+/* ---------- Page Compétences : en-tête de bloc ---------- */
+.comp-bloc-icone {
+  background: var(--bleu-nuit);
+  border: 1.5px solid var(--bleu-nuit);
+  box-shadow: 3px 3px 0 var(--bleu-clair);
+}
+.comp-bloc-icone .ico { width: 28px; height: 28px; color: var(--bleu); }
+
+/* ---------- Page Compétences : listes à puces (sans cadres) ---------- */
+.comp-liste { list-style: none; margin: 0; padding: 0; }
+.comp-liste li {
+  position: relative;
+  padding: 9px 0 9px 22px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--noir);
+  border-bottom: 1px dashed var(--border);
+}
+.comp-liste li:last-child { border-bottom: none; }
+.comp-liste li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 15px;
+  width: 7px;
+  height: 7px;
+  background: var(--bleu);
+  transition: transform 0.2s, background 0.2s;
+}
+.comp-liste li:hover::before { background: var(--or); transform: rotate(45deg); }
+.comp-cle {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--bleu-fonce);
+  margin-right: 8px;
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .comp-liste { columns: 2; column-gap: 32px; }
+  .comp-liste li { break-inside: avoid; }
+}
+
+/* ---------- Page Compétences : logiciels, langages, transversales ---------- */
+.outil-card .ico { width: 34px; height: 34px; color: var(--bleu); transition: color 0.2s, transform 0.2s; }
+.outil-card:hover .ico { color: var(--or); transform: scale(1.08); }
+.soft-icon { display: block; margin-bottom: 10px; line-height: 1; }
+.soft-icon .ico { width: 30px; height: 30px; color: var(--bleu); transition: color 0.2s, transform 0.2s; }
+.soft-card:hover .soft-icon .ico { color: var(--or); transform: scale(1.08); }
+
+/* ---------- Traits dorés supprimés ---------- */
+.header { border-bottom: none; }          /* ligne sous la barre de navigation */
+.footer { border-top: none; }             /* ligne en haut du pied de page */
+.fc-header::after { display: none; }      /* petite barre dorée sous les titres de page */
+.hero-banner { border-bottom: none; }  /* ligne sous le bandeau de citation */
+
+/* ---------- Responsive (à garder en dernier) ---------- */
+@media (max-width: 768px) {
+  .fc-titre { font-size: 36px; }
+  .frise-card, .certif-card, .comp-bloc, .projet-card, .loisir-card, .referent-card { box-shadow: 4px 4px 0 var(--bleu-clair); }
+}
+@media (max-width: 600px) {
+  .fc-titre { font-size: 30px; }
+  .texte h2 { font-size: 30px; }
+  .section-title { font-size: 24px; }
+  .message-box { padding-right: 24px; }
+  .message-box::after { display: none; }
+}

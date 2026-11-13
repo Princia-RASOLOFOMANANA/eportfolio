@@ -12,9 +12,21 @@
     .comp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
     .comp-grid .comp-bloc{margin:0;width:auto;max-width:none;box-sizing:border-box}
     .comp-grid .comp-bloc.pleine{grid-column:1 / -1}
+    /* listes longues en pleine largeur : 2 colonnes */
+    .comp-bloc.pleine .comp-liste{columns:2;column-gap:48px}
+    .comp-bloc.pleine .comp-liste li{break-inside:avoid}
+    /* sous-titres (outils, données étudiées) */
+    .comp-sous{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;color:var(--bleu-fonce);margin:22px 0 10px}
+    .comp-bloc .comp-header + .comp-sous,.comp-bloc-header + .comp-sous{margin-top:6px}
+    .dom-groupes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px}
+    .outils-groupes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 36px}
     @media (max-width:900px){
       .comp-grid{grid-template-columns:1fr;gap:18px}
       .comp-grid .comp-bloc.pleine{grid-column:auto}
+      .dom-groupes,.outils-groupes{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .comp-bloc.pleine .comp-liste{columns:1}
     }
   </style>
 
@@ -99,10 +111,6 @@
   <path d="M2 18h4" />
   <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></g></symbol>
 <symbol id="i-si-sqlite" viewBox="0 0 24 24"><path fill="currentColor" d="M21.678.521c-1.032-.92-2.28-.55-3.513.544a8.71 8.71 0 0 0-.547.535c-2.109 2.237-4.066 6.38-4.674 9.544.237.48.422 1.093.544 1.561a13.044 13.044 0 0 1 .164.703s-.019-.071-.096-.296l-.05-.146a1.689 1.689 0 0 0-.033-.08c-.138-.32-.518-.995-.686-1.289-.143.423-.27.818-.376 1.176.484.884.778 2.4.778 2.4s-.025-.099-.147-.442c-.107-.303-.644-1.244-.772-1.464-.217.804-.304 1.346-.226 1.478.152.256.296.698.422 1.186.286 1.1.485 2.44.485 2.44l.017.224a22.41 22.41 0 0 0 .056 2.748c.095 1.146.273 2.13.5 2.657l.155-.084c-.334-1.038-.47-2.399-.41-3.967.09-2.398.642-5.29 1.661-8.304 1.723-4.55 4.113-8.201 6.3-9.945-1.993 1.8-4.692 7.63-5.5 9.788-.904 2.416-1.545 4.684-1.931 6.857.666-2.037 2.821-2.912 2.821-2.912s1.057-1.304 2.292-3.166c-.74.169-1.955.458-2.362.629-.6.251-.762.337-.762.337s1.945-1.184 3.613-1.72C21.695 7.9 24.195 2.767 21.678.521m-18.573.543A1.842 1.842 0 0 0 1.27 2.9v16.608a1.84 1.84 0 0 0 1.835 1.834h9.418a22.953 22.953 0 0 1-.052-2.707c-.006-.062-.011-.141-.016-.2a27.01 27.01 0 0 0-.473-2.378c-.121-.47-.275-.898-.369-1.057-.116-.197-.098-.31-.097-.432 0-.12.015-.245.037-.386a9.98 9.98 0 0 1 .234-1.045l.217-.028c-.017-.035-.014-.065-.031-.097l-.041-.381a32.8 32.8 0 0 1 .382-1.194l.2-.019c-.008-.016-.01-.038-.018-.053l-.043-.316c.63-3.28 2.587-7.443 4.8-9.791.066-.069.133-.128.198-.194Z"/></symbol>
-<symbol id="i-si-sap" viewBox="0 0 24 24"><path fill="currentColor" d="M0 6.064v11.872h12.13L24 6.064zm3.264 2.208h.005c.863.001 1.915.245 2.676.633l-.82 1.43c-.835-.404-1.255-.442-1.73-.467-.708-.038-1.064.215-1.069.488-.007.332.669.633 1.305.838.964.306 2.19.715 2.377 1.9L7.77 8.437h2.046l2.064 5.576-.007-5.575h2.37c2.257 0 3.318.764 3.318 2.519 0 1.575-1.09 2.514-2.936 2.514h-.763l-.01 2.094-3.588-.003-.25-.908c-.37.122-.787.189-1.23.189-.456 0-.885-.071-1.263-.2l-.358.919-2 .006.09-.462c-.029.025-.057.05-.087.074-.535.43-1.208.629-2.037.644l-.213.002a5.075 5.075 0 0 1-2.581-.675l.73-1.448c.79.467 1.286.572 1.956.558.347-.007.598-.07.761-.239a.557.557 0 0 0 .156-.369c.007-.376-.53-.553-1.185-.756-.531-.164-1.135-.389-1.606-.735-.559-.41-.825-.924-.812-1.65a1.99 1.99 0 0 1 .566-1.377c.519-.537 1.357-.863 2.363-.863zm10.597 1.67v1.904h.521c.694 0 1.247-.23 1.248-.964 0-.709-.554-.94-1.248-.94zm-5.087.767l-.748 2.362c.223.085.481.133.757.133.268 0 .52-.047.742-.126l-.736-2.37z"/></symbol>
-<symbol id="i-lu-users-round" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0" />
-  <circle cx="10" cy="8" r="5" />
-  <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" /></g></symbol>
 <symbol id="i-lu-shield-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
   <path d="m9 12 2 2 4-4" /></g></symbol>
 <symbol id="i-dv-powershell" viewBox="0 0 128 128"><g fill="currentColor"><path fill-rule="evenodd" d="M124.912 19.358c-.962-1.199-2.422-1.858-4.111-1.858h-92.61c-3.397 0-6.665 2.642-7.444 6.015L2.162 104.022c-.396 1.711-.058 3.394.926 4.619.963 1.199 2.423 1.858 4.111 1.858v.001H99.81c3.396 0 6.665-2.643 7.443-6.016l18.586-80.508c.395-1.711.057-3.395-.927-4.618zm-98.589 77.17c-1.743-2.397-1.323-5.673.94-7.318l37.379-27.067v-.556L41.157 36.603c-1.916-2.038-1.716-5.333.445-7.361 2.162-2.027 5.466-2.019 7.382.019l28.18 29.979c1.6 1.702 1.718 4.279.457 6.264-.384.774-1.182 1.628-2.593 2.618l-41.45 29.769c-2.263 1.644-5.512 1.034-7.255-1.363zm59.543.538H63.532c-2.597 0-4.702-2.082-4.702-4.65s2.105-4.65 4.702-4.65h22.333c2.597 0 4.702 2.082 4.702 4.65s-2.104 4.65-4.701 4.65z" clip-rule="evenodd"/></g></symbol>
@@ -147,6 +155,9 @@
 <symbol id="i-lu-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
   <rect x="2" y="4" width="20" height="16" rx="2" /></g></symbol>
 <symbol id="i-lu-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></g></symbol>
+<symbol id="i-lu-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" /><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" /></g></symbol>
+<symbol id="i-lu-share-2" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" x2="15.42" y1="13.51" y2="17.49" /><line x1="15.41" x2="8.59" y1="6.51" y2="10.49" /></g></symbol>
+<symbol id="i-lu-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" /></g></symbol>
 </svg>
 
 <!-- ===================== HEADER ===================== -->
@@ -212,23 +223,21 @@
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-sigma"/></svg></div>
       <div>
-        <h2 class="comp-bloc-titre">Statistiques &amp; Analyse de données</h2>
-        <p class="comp-bloc-sous">Analyser et modéliser</p>
+        <h2 class="comp-bloc-titre">Statistiques</h2>
+        <p class="comp-bloc-sous">Analyser, modéliser, prévoir</p>
       </div>
     </div>
     <ul class="comp-liste">
-  <li>Statistiques descriptives</li>
-  <li>Statistiques inférentielles</li>
-  <li>Intervalles de confiance</li>
-  <li><span class="comp-cle">Tests</span>t, Chi², Fisher</li>
-  <li>Régression linéaire</li>
-  <li>Régression polynomiale</li>
+  <li>Statistiques descriptives et inférentielles</li>
+  <li><span class="comp-cle">Tests</span>Student, Chi², Fisher</li>
+  <li>Régression linéaire et polynomiale</li>
   <li>Régression logistique</li>
-  <li>ACP / ACM</li>
-  <li>Clustering K-means</li>
-  <li>Séries temporelles</li>
-  <li><span class="comp-cle">Prévision</span>ARIMA, SARIMA, Holt-Winters</li>
-  <li>Enquêtes &amp; questionnaires</li>
+  <li>Analyses factorielles (composantes principales, correspondances simples et multiples)</li>
+  <li><span class="comp-cle">Clustering</span>K-means</li>
+  <li><span class="comp-cle">Data mining</span>Classification et régression par arbres de décision (CART), cible binaire ou multiclasse</li>
+  <li><span class="comp-cle">Prévision</span>Séries temporelles : ARIMA, SARIMA, Holt-Winters</li>
+  <li>Programmation statistique (R, Python, SAS)</li>
+  <li>Conception d'enquêtes et de questionnaires</li>
 </ul>
   </section>
 
@@ -236,20 +245,18 @@
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-database"/></svg></div>
       <div>
-        <h2 class="comp-bloc-titre">Data &amp; Bases de données</h2>
-        <p class="comp-bloc-sous">Collecter, structurer, nettoyer</p>
+        <h2 class="comp-bloc-titre">Bases de données</h2>
+        <p class="comp-bloc-sous">Collecter, structurer, migrer</p>
       </div>
     </div>
     <ul class="comp-liste">
-  <li>Modélisation MCD / MLD</li>
-  <li>SQL</li>
-  <li>Nettoyage de données</li>
-  <li>Audit qualité des données</li>
-  <li>ETL &amp; Power Query</li>
-  <li>Intégration multi-sources</li>
-  <li>API &amp; scraping web</li>
-  <li>Dictionnaire de données</li>
-  <li>Scripts de chargement &amp; migration</li>
+  <li>Bases de données relationnelles : modélisation conceptuelle et logique, SQL</li>
+  <li>Bases de données non relationnelles</li>
+  <li>Nettoyage et structuration des données</li>
+  <li>Processus d'extraction, transformation et chargement (ETL)</li>
+  <li>Collecte de données sur le web (interfaces de programmation, web scraping)</li>
+  <li>Intégration de données multi-sources</li>
+  <li>Migration de données</li>
 </ul>
   </section>
 
@@ -257,18 +264,32 @@
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-column-increasing"/></svg></div>
       <div>
-        <h2 class="comp-bloc-titre">BI &amp; Visualisation</h2>
-        <p class="comp-bloc-sous">Restituer et décider</p>
+        <h2 class="comp-bloc-titre">Business Intelligence</h2>
+        <p class="comp-bloc-sous">Aide à la décision</p>
       </div>
     </div>
     <ul class="comp-liste">
-  <li>Tableaux de bord Power BI</li>
-  <li>Conception de KPI</li>
-  <li>Reporting</li>
-  <li>Applications Shiny</li>
-  <li>Graphiques ggplot2 / Chart.js</li>
-  <li>Cartographie</li>
-  <li>Restitution orale</li>
+  <li>Tableaux de bord et graphiques interactifs</li>
+  <li>Conception d'indicateurs de performance (KPI)</li>
+  <li>Visualisation de données (Python, R) et reporting</li>
+  <li>Création d'applications d'aide à la décision</li>
+</ul>
+  </section>
+
+  <section class="comp-bloc reveal">
+    <div class="comp-bloc-header">
+      <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-workflow"/></svg></div>
+      <div>
+        <h2 class="comp-bloc-titre">Programmation &amp; Automatisation</h2>
+        <p class="comp-bloc-sous">Programmer et automatiser</p>
+      </div>
+    </div>
+    <ul class="comp-liste">
+  <li>Programmation (Python, VBA)</li>
+  <li>Développement web complet, serveur et interface (Flask)</li>
+  <li>Création de flux automatisés (Power Automate)</li>
+  <li>Automatisation par intelligence artificielle</li>
+  <li>Création d'agents d'intelligence artificielle (AI Builder)</li>
 </ul>
   </section>
 
@@ -276,21 +297,32 @@
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-kanban"/></svg></div>
       <div>
-        <h2 class="comp-bloc-titre">Gestion de projet &amp; Automatisation</h2>
-        <p class="comp-bloc-sous">Organiser et automatiser</p>
+        <h2 class="comp-bloc-titre">Gestion de projet</h2>
+        <p class="comp-bloc-sous">Organiser et livrer</p>
       </div>
     </div>
     <ul class="comp-liste">
-  <li>Méthode Waterfall</li>
-  <li>Planning &amp; Gantt (MS Project)</li>
-  <li>Cheffe de projet (SAE)</li>
-  <li>Automatisation Python / VBA</li>
-  <li>Flux Power Automate</li>
-  <li>Automatisation par IA (prompts)</li>
+  <li>Méthode en cascade (Waterfall)</li>
+  <li>Planning et diagramme de Gantt</li>
+  <li>Cheffe de projet sur des projets universitaires</li>
   <li>Déploiement d'applications</li>
   <li>Documentation technique</li>
-  <li>Rapports techniques</li>
-  <li>Communication scientifique</li>
+</ul>
+  </section>
+
+  <section class="comp-bloc reveal">
+    <div class="comp-bloc-header">
+      <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-notebook-pen"/></svg></div>
+      <div>
+        <h2 class="comp-bloc-titre">Autres compétences</h2>
+        <p class="comp-bloc-sous">Rédiger, communiquer, auditer</p>
+      </div>
+    </div>
+    <ul class="comp-liste">
+  <li>Rédaction de rapports</li>
+  <li>Communication professionnelle</li>
+  <li>Analyse de conformité au règlement général sur la protection des données (RGPD)</li>
+  <li>Analyse d'audit</li>
 </ul>
   </section>
 
@@ -298,57 +330,47 @@
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-code-xml"/></svg></div>
       <div>
-        <h2 class="comp-bloc-titre">Langages de programmation</h2>
+        <h2 class="comp-bloc-titre">Langages</h2>
         <p class="comp-bloc-sous">Code, requêtes, web</p>
       </div>
     </div>
     <div class="outils-grid">
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-r"/></svg>
         <span>R</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-python"/></svg>
         <span>Python</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-database"/></svg>
         <span>SQL</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-scatter"/></svg>
         <span>SAS</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-file-code-corner"/></svg>
         <span>VBA for Excel</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-square-function"/></svg>
         <span>DAX</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-html5"/></svg>
         <span>HTML / CSS</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-c"/></svg>
         <span>Initiation au langage C</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-javascript"/></svg>
         <span>JavaScript</span>
       </div>
-
     </div>
   </section>
 
@@ -356,21 +378,19 @@
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-puzzle"/></svg></div>
       <div>
-        <h2 class="comp-bloc-titre">Bibliothèques &amp; Frameworks</h2>
+        <h2 class="comp-bloc-titre">Bibliothèques</h2>
         <p class="comp-bloc-sous">Briques techniques</p>
       </div>
     </div>
     <ul class="comp-liste">
   <li><span class="comp-cle">Python</span>pandas, openpyxl, requests</li>
   <li><span class="comp-cle">Python</span>Selenium, BeautifulSoup</li>
-  <li>Flask, Jinja2, python-dotenv</li>
+  <li><span class="comp-cle">Python</span>Flask, Jinja2, python-dotenv</li>
   <li><span class="comp-cle">R</span>tidyverse, dplyr, ggplot2</li>
   <li><span class="comp-cle">R</span>forecast, tseries</li>
   <li><span class="comp-cle">R</span>MASS, robusTest, FactoMineR</li>
-  <li>Shiny, shinydashboard, DT</li>
-  <li>Chart.js</li>
-  <li>Développement web full-stack</li>
-  <li>Sécurité des sessions web</li>
+  <li><span class="comp-cle">R</span>Shiny, shinydashboard, DT</li>
+  <li><span class="comp-cle">Web</span>Chart.js</li>
   <li><span class="comp-cle">Déploiement</span>shinyapps.io, PythonAnywhere</li>
 </ul>
   </section>
@@ -380,139 +400,119 @@
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-wrench"/></svg></div>
       <div>
         <h2 class="comp-bloc-titre">Logiciels &amp; Outils</h2>
-        <p class="comp-bloc-sous">Mon quotidien data</p>
+        <p class="comp-bloc-sous">Classés par catégorie</p>
       </div>
     </div>
-    <div class="outils-grid">
-
+    <div class="outils-groupes">
+      <div class="outils-groupe">
+        <h3 class="comp-sous">Business Intelligence</h3>
+        <div class="outils-grid">
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-column-big"/></svg>
         <span>Power BI</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-file-spreadsheet"/></svg>
         <span>Excel / Power Query</span>
       </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-rstudioide"/></svg>
-        <span>RStudio</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-spyderide"/></svg>
-        <span>Spyder</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-jupyter"/></svg>
-        <span>Jupyter</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-dv-vscode"/></svg>
-        <span>Visual Studio Code</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-line"/></svg>
-        <span>SAS Studio</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-gantt"/></svg>
-        <span>Microsoft Project</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-table-properties"/></svg>
-        <span>Access</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-limesurvey"/></svg>
-        <span>Lime Survey</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-layout-grid"/></svg>
-        <span>Microsoft Office Suite</span>
-      </div>
-
-      <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-dataiku"/></svg>
-        <span>Dataiku</span>
-      </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-layout-dashboard"/></svg>
         <span>RShiny</span>
       </div>
-
       <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-workflow"/></svg>
-        <span>Power Automate</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-dataiku"/></svg>
+        <span>Dataiku</span>
       </div>
-
+        </div>
+      </div>
+      <div class="outils-groupe">
+        <h3 class="comp-sous">Bases de données</h3>
+        <div class="outils-grid">
       <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-notebook-pen"/></svg>
-        <span>Looping</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-table-properties"/></svg>
+        <span>Access</span>
       </div>
-
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-sqlite"/></svg>
         <span>SQLite</span>
       </div>
-
       <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-sap"/></svg>
-        <span>SAP</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-notebook-pen"/></svg>
+        <span>Looping</span>
       </div>
-
       <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-users-round"/></svg>
-        <span>Workday</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-leaf"/></svg>
+        <span>MongoDB</span>
       </div>
-
       <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-shield-check"/></svg>
-        <span>GRC Optro</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-share-2"/></svg>
+        <span>Neo4j</span>
       </div>
-
       <div class="outil-card">
-        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-dv-powershell"/></svg>
-        <span>PowerShell</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-server"/></svg>
+        <span>Cassandra</span>
       </div>
-
+        </div>
+      </div>
+      <div class="outils-groupe">
+        <h3 class="comp-sous">Développement &amp; Automatisation</h3>
+        <div class="outils-grid">
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-rstudioide"/></svg>
+        <span>RStudio</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-jupyter"/></svg>
+        <span>Jupyter</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-spyderide"/></svg>
+        <span>Spyder</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-line"/></svg>
+        <span>SAS Studio</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-dv-vscode"/></svg>
+        <span>Visual Studio Code</span>
+      </div>
       <div class="outil-card">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-github"/></svg>
         <span>Git / GitHub</span>
       </div>
-
-    </div>
-  </section>
-
-  <section class="comp-bloc reveal">
-    <div class="comp-bloc-header">
-      <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-shield-check"/></svg></div>
-      <div>
-        <h2 class="comp-bloc-titre">Contrôle interne &amp; Conformité</h2>
-        <p class="comp-bloc-sous">Risques, accès, RGPD</p>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-dv-powershell"/></svg>
+        <span>PowerShell</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-workflow"/></svg>
+        <span>Power Automate</span>
+      </div>
+        </div>
+      </div>
+      <div class="outils-groupe">
+        <h3 class="comp-sous">Gestion de projet &amp; Autres</h3>
+        <div class="outils-grid">
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-chart-gantt"/></svg>
+        <span>Microsoft Project</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-layout-grid"/></svg>
+        <span>Microsoft Office Suite</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-si-limesurvey"/></svg>
+        <span>Lime Survey</span>
+      </div>
+      <div class="outil-card">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-shield-check"/></svg>
+        <span>GRC Optro</span>
+      </div>
+        </div>
       </div>
     </div>
-    <ul class="comp-liste">
-  <li>Principes du contrôle interne</li>
-  <li>Outils d'audit</li>
-  <li>Analyse des accès SAP</li>
-  <li>Séparation des tâches (SoD)</li>
-  <li>GRC (Optro)</li>
-  <li>Délégation d'Autorité (DoA)</li>
-  <li>Données RH (Workday)</li>
-  <li>Campagnes de self-assessment</li>
-  <li>Audit RGPD</li>
-  <li>Privacy by Design</li>
-</ul>
   </section>
 
   <section class="comp-bloc reveal">
@@ -524,28 +524,6 @@
       </div>
     </div>
     <div class="langues-grid">
-  
-      <div class="langue-card">
-        
-        <div class="langue-drapeau">
-          
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
-    <!-- Bande blanche verticale -->
-    <rect width="300" height="600" fill="#FFFFFF"/>
-    
-    <!-- Bande rouge en haut à droite -->
-    <rect x="300" width="600" height="300" fill="#FC3D32"/>
-    
-<rect x="300" y="300" width="600" height="300" fill="#007E3A"/>
-</svg>
-
-        </div>
-        <div class="langue-info">
-          <p class="langue-nom">Malgache</p>
-          <p class="langue-niveau-txt">Langue maternelle</p>
-        </div>
-        <div class="langue-cercle natif">N</div>
-      </div>
   
       <div class="langue-card">
         <div class="langue-drapeau">
@@ -643,40 +621,8 @@
   
     </div>
   </section>
-  <section class="comp-bloc reveal pleine">
-    <div class="comp-bloc-header">
-      <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-layers"/></svg></div>
-      <div>
-        <h2 class="comp-bloc-titre">Types de données exploités</h2>
-        <p class="comp-bloc-sous">Jeux de données réels traités</p>
-      </div>
-    </div>
-    <div class="domaines-nuage">
-      <span class="domaine-pill moyen">Enquêtes &amp; sondages</span>
-      <span class="domaine-pill moyen">Santé &amp; soins intensifs</span>
-      <span class="domaine-pill moyen">Épidémiologie</span>
-      <span class="domaine-pill moyen">Croissance infantile</span>
-      <span class="domaine-pill moyen">Retail &amp; consommation</span>
-      <span class="domaine-pill moyen">Cinéma</span>
-      <span class="domaine-pill moyen">Énergie</span>
-      <span class="domaine-pill moyen">Éducation &amp; Parcoursup</span>
-      <span class="domaine-pill moyen">INSEE &amp; socio-économie</span>
-      <span class="domaine-pill moyen">Agriculture</span>
-      <span class="domaine-pill moyen">Climat &amp; environnement</span>
-      <span class="domaine-pill moyen">RH</span>
-      <span class="domaine-pill moyen">SAP / ERP</span>
-      <span class="domaine-pill moyen">GRC — Gouvernance, Risque &amp; Conformité</span>
-      <span class="domaine-pill moyen">Hôtellerie &amp; réservations</span>
-      <span class="domaine-pill moyen">Nutrition (Open Food Facts, Ciqual)</span>
-      <span class="domaine-pill moyen">Activité physique</span>
-      <span class="domaine-pill moyen">Finance &amp; KPI (Sodexo)</span>
-      <span class="domaine-pill moyen">Astronomie</span>
-      <span class="domaine-pill moyen">Commerces &amp; urbanisme (APUR)</span>
-      <span class="domaine-pill moyen">Web (API, scraping)</span>
-    </div>
-  </section>
 
-  <section class="comp-bloc reveal pleine">
+  <section class="comp-bloc reveal">
     <div class="comp-bloc-header">
       <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-handshake"/></svg></div>
       <div>
@@ -719,6 +665,59 @@
       </div>
     </div>
   </section>
+
+  <section class="comp-bloc reveal pleine">
+    <div class="comp-bloc-header">
+      <div class="comp-bloc-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-layers"/></svg></div>
+      <div>
+        <h2 class="comp-bloc-titre">Données étudiées</h2>
+        <p class="comp-bloc-sous">Jeux de données réels traités jusqu'à présent</p>
+      </div>
+    </div>
+    <div class="dom-groupes">
+      <div class="dom-groupe">
+        <h3 class="comp-sous">Santé &amp; Société</h3>
+        <div class="domaines-nuage">
+          <span class="domaine-pill moyen">Santé &amp; soins intensifs</span>
+          <span class="domaine-pill moyen">Épidémiologie</span>
+          <span class="domaine-pill moyen">Croissance infantile</span>
+          <span class="domaine-pill moyen">Nutrition &amp; activité physique</span>
+          <span class="domaine-pill moyen">Éducation &amp; Parcoursup</span>
+          <span class="domaine-pill moyen">INSEE &amp; socio-économie</span>
+          <span class="domaine-pill moyen">Enquêtes &amp; sondages</span>
+        </div>
+      </div>
+      <div class="dom-groupe">
+        <h3 class="comp-sous">Économie &amp; Business</h3>
+        <div class="domaines-nuage">
+          <span class="domaine-pill moyen">Retail &amp; consommation</span>
+          <span class="domaine-pill moyen">Finance &amp; indicateurs de performance (Sodexo)</span>
+          <span class="domaine-pill moyen">Hôtellerie &amp; réservations</span>
+          <span class="domaine-pill moyen">Commerces &amp; urbanisme (APUR)</span>
+          <span class="domaine-pill moyen">Cinéma</span>
+          <span class="domaine-pill moyen">Données issues du web</span>
+        </div>
+      </div>
+      <div class="dom-groupe">
+        <h3 class="comp-sous">Sciences &amp; Environnement</h3>
+        <div class="domaines-nuage">
+          <span class="domaine-pill moyen">Agriculture</span>
+          <span class="domaine-pill moyen">Climat &amp; environnement</span>
+          <span class="domaine-pill moyen">Énergie</span>
+          <span class="domaine-pill moyen">Astronomie</span>
+        </div>
+      </div>
+      <div class="dom-groupe">
+        <h3 class="comp-sous">Entreprise &amp; Contrôle interne</h3>
+        <div class="domaines-nuage">
+          <span class="domaine-pill moyen">Données de contrôle interne</span>
+          <span class="domaine-pill moyen">Gouvernance, Risque &amp; Conformité</span>
+          <span class="domaine-pill moyen">Ressources humaines</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   </div>
 
 </main>
@@ -748,14 +747,13 @@
       </ul>
     </div>
     <div class="footer-col footer-reseaux">
-      <h4>Réseaux</h4>
-      <div class="footer-socials">
-        <a class="social" href="https://www.linkedin.com/in/princia-rasolofomanana" aria-label="LinkedIn">in</a>
-        <a class="social" href="https://github.com/Princia-RASOLOFOMANANA" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-        <a class="social" href="mailto:princiarslfm@gmail.com" aria-label="Email"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-mail"/></svg></a>
-        <a class="social" href="tel:+33765880897" aria-label="Téléphone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-phone"/></svg></a>
+        <h4>Réseaux</h4>
+        <div class="footer-socials">
+          <a class="social" href="https://www.linkedin.com/in/princia-rasolofomanana" aria-label="LinkedIn">in</a>
+          <a class="social" href="https://github.com/Princia-RASOLOFOMANANA" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true" style="vertical-align:middle"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="social" href="mailto:princia.rasolofomanana@outlook.com" aria-label="Email">          <a class="social" href="tel:+33765880897" aria-label="Téléphone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lu-phone"/></svg></a>
+        </div>
       </div>
-    </div>
   </div>
   <div class="footer-middle">
     © 2026 – Princia RASOLOFOMANANA. Tous droits réservés.<br>
